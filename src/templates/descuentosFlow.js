@@ -9,6 +9,7 @@ const descuentos = fs.readFileSync(
 const descuentosFlow = addKeyword(EVENTS.ACTION).addAction(
   async (ctx, ctxFn) => {
     console.log("Navega a Descuentos");
+
     await ctxFn.flowDynamic([{ body: descuentos, delay: 800 }]);
     await ctxFn.flowDynamic([
       { body: "Si tienes más dudas, hazme una pregunta", delay: 4000 },
