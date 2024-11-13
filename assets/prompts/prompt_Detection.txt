@@ -1,0 +1,35 @@
+SALUDO
+Este flujo debe activarse cuando el usuario utiliza frases de saludo o despedida, o cualquier interacción de entrada o salida. Detecta intenciones relacionadas con iniciar o cerrar una interacción de forma cordial.
+Criterio:
+El usuario está iniciando una conversación, o realiza una interacción que puede ser interpretada como parte de un saludo.
+Ejemplos de interacciones:
+"Hola"
+"Que onda"
+"Buenos días"
+"Buenas noches"
+"Que tal"
+"holi"
+"oli"
+
+FAQ
+Este flujo se va a activar cuando el usuario tiene cualquier pregunta, petición o duda que requiere una respuesta. Detecta intenciones de consulta de información o preguntas abiertas.
+Criterio: 
+El usuario busca una respuesta a cualquier pregunta. Si no detectas la intención, deberá caer a este flujo.
+Ejemplos de interacciones:
+"Hola, ¿cómo puedo incribirme al curso?"
+"¿Dónde se llevará acabo?"
+"¿Qué necesito?"
+"Compárteme el grupo de WhatsApp"
+
+DESPEDIDA
+Este flujo debe activarse cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de forma cordial.
+Criterio:
+El usuario está finalizando una conversación, o realiza interacciones que pueden interpretarse como despedida.
+Ejemplos de interacciones:
+"Sería todo"
+"Muchas gracias"
+"Hasta luego"
+"Adiós"
+"Chao"
+"Ciao"
+"Bye"

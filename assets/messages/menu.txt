@@ -1,0 +1,11 @@
+Elige una opción: 
+
+1️⃣ Información de Invierno PUMA 2025
+2️⃣ Información sobre descuento comunidad UNAM
+3️⃣ Requisitos
+4️⃣ Fechas del programa
+5️⃣ Registro
+6️⃣ Alojamientos
+
+
+0️⃣ Salir.
