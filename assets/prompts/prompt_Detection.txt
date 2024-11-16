@@ -14,7 +14,7 @@ Ejemplos de interacciones:
 FAQ
 Este flujo se va a activar cuando el usuario tiene cualquier pregunta, petición o duda que requiere una respuesta. Detecta intenciones de consulta de información o preguntas abiertas.
 Criterio: 
-El usuario busca una respuesta a cualquier pregunta.
+El usuario busca una respuesta a cualquier pregunta o solicita información o una aclaración.
 Ejemplos de interacciones:
 "Hola, ¿cómo puedo incribirme al curso?"
 "¿Dónde se llevará acabo?"
@@ -22,6 +22,14 @@ Ejemplos de interacciones:
 "Compárteme el grupo de WhatsApp"
 "¿Cual alojamiento me queda más cerca?"
 "¿Donde me puedo alojar?"
+"Dame informes"
+"cuando?"
+"Cómo?"
+"donde?"
+"que?"
+"donde?"
+"ok"
+"dame"
 
 DESPEDIDA
 Este flujo debe activarse cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de forma cordial.
