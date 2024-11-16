@@ -1,20 +1,26 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
 import path from "path";
 import fs from "fs";
+import { handlerMenu } from "./handlerMenu.js";
 const fechas = fs.readFileSync(
   path.join(process.cwd(), "assets/messages", "fechas.txt"),
   "utf-8"
 );
 
 const fechasFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
-  console.log("Navega  fechas");
-  await ctxFn.flowDynamic([{ body: fechas, delay: 800 }]);
-  await ctxFn.flowDynamic([
-    { body: "Si tienes más dudas, hazme una pregunta", delay: 4000 },
-  ]);
-  return ctxFn.endFlow(
-    "O también puedes escribir *menú* para volver a comenzar."
-  );
+  try {
+    console.log("Navega  fechas");
+    await ctxFn.flowDynamic([{ body: fechas, delay: 800 }]);
+    await ctxFn.flowDynamic([
+      { body: "Si tienes más dudas, hazme una pregunta", delay: 1000 },
+    ]);
+    await ctxFn.flowDynamic(
+      "O también puedes escribir *menú* para volver a comenzar."
+    );
+    return ctxFn.gotoFlow(handlerMenu);
+  } catch (error) {
+    console.log("Error en fechasFlow: ", error);
+  }
 });
 
 export { fechasFlow };

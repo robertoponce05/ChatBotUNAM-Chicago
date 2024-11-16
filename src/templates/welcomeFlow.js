@@ -4,7 +4,7 @@ import { menuFlow } from "./menuFlow.js";
 const welcomeFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   await ctxFn.flowDynamic([
     {
-      body: "Bienvenido al ChatBot de la UNAM Chicago. Por favor, escribe tu pregunta o duda",
+      body: "Bienvenido al ChatBot de la UNAM Chicago 🤓",
       delay: 500,
     },
   ]);

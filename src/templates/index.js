@@ -10,6 +10,8 @@ import { descuentosFlow } from "./descuentosFlow.js";
 import { requisitosFlow } from "./requisitosFlow.js";
 import { fechasFlow } from "./fechasFlow.js";
 import { hotelFlow } from "./hotelFlow.js";
+import { registroFlow } from "./registroFlow.js";
+import { handlerMenu } from "./handlerMenu.js";
 
 export default createFlow([
   welcomeFlow,
@@ -22,6 +24,7 @@ export default createFlow([
   descuentosFlow,
   requisitosFlow,
   fechasFlow,
-  requisitosFlow,
+  registroFlow,
   hotelFlow,
+  handlerMenu,
 ]);

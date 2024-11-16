@@ -8,6 +8,7 @@ import { gptFlow } from "./gptFlow.js";
 import { welcomeFlow } from "./welcomeFlow.js";
 import { byeFlow } from "./byeFlow.js";
 import { mongoAdapter } from "../db/mongoAdapter.js";
+import { handlerMenu } from "./handlerMenu.js";
 
 const Prompt_DETECTED = path.join(
   process.cwd(),
@@ -31,7 +32,7 @@ export const DetectIntention = createFlowRouting
   })
   .create({
     afterEnd(flow) {
-      return flow.addAction(async (ctx, { state, endFlow, gotoFlow }) => {
+      return flow.addAction(async (ctx, { state, gotoFlow, flowDynamic }) => {
         try {
           console.log(
             "INTENCION DETECTADA de : ",
@@ -62,10 +63,9 @@ export const DetectIntention = createFlowRouting
               " ",
               ctx.body
             );
-
-            return endFlow(
-              "No entendí tu pregunta, por favor podrías repetirla más claramente."
-            );
+            await flowDynamic("No entendí tu pregunta 😅");
+            await flowDynamic("Escribe *menú* o dame más detalles.");
+            return gotoFlow(handlerMenu);
           }
           if (intention == "SALUDO") {
             return gotoFlow(welcomeFlow);
