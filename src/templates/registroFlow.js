@@ -6,16 +6,16 @@ const registro = fs.readFileSync(
   path.join(process.cwd(), "assets/messages", "registro.txt"),
   "utf-8"
 );
+const imgPath = path.join(process.cwd(), "assets/media", "curso.jpeg");
 
 const registroFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   try {
     console.log("Navega  registro");
-    await ctxFn.flowDynamic([{ body: registro, delay: 800 }]);
-    await ctxFn.flowDynamic([
-      { body: "Si tienes más dudas, hazme una pregunta", delay: 800 },
-    ]);
+    await ctxFn.flowDynamic([{ media: imgPath, delay: 800 }]);
+    await ctxFn.flowDynamic([{ body: registro, delay: 1000 }]);
+
     await ctxFn.flowDynamic(
-      "O también puedes escribir *menú* para volver a comenzar."
+      "Escribe  *menú* para regresar."
     );
     return ctxFn.gotoFlow(handlerMenu);
   } catch (error) {

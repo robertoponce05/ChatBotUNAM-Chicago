@@ -12,14 +12,23 @@ Ejemplos de interacciones:
 "oli"
 
 FAQ
-Este flujo se va a activar cuando el usuario tiene cualquier pregunta, petición o duda que requiere una respuesta. Detecta intenciones de consulta de información o preguntas abiertas.
+Este se debe activar cuando se ingresa un número del 0 al 7, o si el usuario quiere acceder a este menú de opciones.
+1️⃣ Información de Verano PUMA 2025  
+2️⃣ Información visitas profesionales  
+3️⃣ Descuento comunidad UNAM  
+4️⃣ Requisitos  
+5️⃣ Fechas del programa  
+6️⃣ Registro  
+7️⃣ Alojamientos  
+
+0️⃣ Salir.
 Criterio: 
-El usuario busca una respuesta a cualquier pregunta o solicita información o una aclaración.
+El usuario busca interactuar con el menú proporcionado y deberás guiarlo.
 Ejemplos de interacciones:
 "Hola, ¿cómo puedo incribirme al curso?"
 "¿Dónde se llevará acabo?"
 "¿Qué necesito?"
-"Compárteme el grupo de WhatsApp"
+"Compárteme información"
 "¿Cual alojamiento me queda más cerca?"
 "¿Donde me puedo alojar?"
 "Dame informes"
@@ -30,6 +39,15 @@ Ejemplos de interacciones:
 "donde?"
 "ok"
 "dame"
+"1"
+"2"
+"3"
+"4"
+"información"
+"fechas"
+"negocios"
+"arquitectura"
+"visa"
 
 DESPEDIDA
 Este flujo debe activarse cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de forma cordial.

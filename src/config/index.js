@@ -8,10 +8,14 @@ export const config = {
   jwtToken: process.env.jwtToken,
   numberId: process.env.numberId,
   verifyToken: process.env.verifyToken,
-  version: "v20.0",
+  version: "v21.0",
   // OpenAI
   openai_apiKey: process.env.openai_apiKey,
   model: process.env.model,
   //MongoDB
   mongoDb_uri: process.env.mongoDb_uri,
+  //Twilio
+  ACC_SID: process.env.ACC_SID,
+  ACC_TOKEN: process.env.ACC_TOKEN,
+  ACC_VENDOR: process.env.ACC_VENDOR,
 };

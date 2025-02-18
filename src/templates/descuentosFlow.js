@@ -13,11 +13,9 @@ const descuentosFlow = addKeyword(EVENTS.ACTION).addAction(
       console.log("Navega a Descuentos");
 
       await ctxFn.flowDynamic([{ body: descuentos, delay: 800 }]);
-      await ctxFn.flowDynamic([
-        { body: "Si tienes más dudas, hazme una pregunta", delay: 800 },
-      ]);
+
       await ctxFn.flowDynamic(
-        "O también puedes escribir *menú* para volver a comenzar."
+        "Escribe  *menú* para regresar."
       );
       return ctxFn.gotoFlow(handlerMenu);
     } catch (error) {

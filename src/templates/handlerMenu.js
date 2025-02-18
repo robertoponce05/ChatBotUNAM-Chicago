@@ -5,6 +5,7 @@ import { requisitosFlow } from "./requisitosFlow.js";
 import { fechasFlow } from "./fechasFlow.js";
 import { registroFlow } from "./registroFlow.js";
 import { hotelFlow } from "./hotelFlow.js";
+import { visitasFlow } from "./visitasFlow.js";
 import { DetectIntention } from "./intentionsFlow.js";
 import { EVENTS } from "@builderbot/bot";
 import { menuFlow } from "./menuFlow.js";
@@ -16,7 +17,7 @@ const handlerMenu = addKeyword(EVENTS.ACTION)
       console.error("entra HandlerMenu con captura: ", ctx.body);
       const userInput = ctx.body.toLowerCase();
       if (
-        !["1", "2", "3", "4", "5", "6", "0", "salir", "menu", "menú"].includes(
+        !["1", "2", "3", "4", "5", "6", "7", "0", "salir", "menu", "menú"].includes(
           userInput
         )
       ) {
@@ -26,15 +27,18 @@ const handlerMenu = addKeyword(EVENTS.ACTION)
         case "1":
           return gotoFlow(flowInfo);
         case "2":
-          return gotoFlow(descuentosFlow);
+          return gotoFlow(visitasFlow);
         case "3":
-          return gotoFlow(requisitosFlow);
+          return gotoFlow(descuentosFlow);
         case "4":
-          return gotoFlow(fechasFlow);
+          return gotoFlow(requisitosFlow);
         case "5":
-          return gotoFlow(registroFlow);
+          return gotoFlow(fechasFlow);
         case "6":
+          return gotoFlow(registroFlow);
+        case "7":
           return gotoFlow(hotelFlow);
+
         case "0":
         case "salir":
           return await flowDynamic(

@@ -47,11 +47,9 @@ const gptFlow = addKeyword(EVENTS.ACTION)
     await mongoAdapter.addHistory(ctx.from, newEntry);
   })
   .addAction(async (ctx, ctxFn) => {
-    await ctxFn.flowDynamic([
-      { body: "Si tienes más dudas, hazme una pregunta", delay: 1000 },
-    ]);
+
     await ctxFn.flowDynamic(
-      "Dime *menú* para volver a comenzar. Escribe *salir* para terminar."
+      "Dime *menú* para regresar. Escribe *salir* para terminar."
     );
     return ctxFn.gotoFlow(handlerMenu);
   });

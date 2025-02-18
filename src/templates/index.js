@@ -12,6 +12,7 @@ import { fechasFlow } from "./fechasFlow.js";
 import { hotelFlow } from "./hotelFlow.js";
 import { registroFlow } from "./registroFlow.js";
 import { handlerMenu } from "./handlerMenu.js";
+import { visitasFlow } from "./visitasFlow.js";
 
 export default createFlow([
   welcomeFlow,
@@ -27,4 +28,5 @@ export default createFlow([
   registroFlow,
   hotelFlow,
   handlerMenu,
+  visitasFlow,
 ]);

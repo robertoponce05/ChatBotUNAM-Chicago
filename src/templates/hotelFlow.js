@@ -16,11 +16,9 @@ const hotelFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
     console.log("Navega  hotel");
     await ctxFn.flowDynamic([{ body: hotel, delay: 800 }]);
     await ctxFn.flowDynamic([{ body: hoteles, delay: 1000 }]);
-    await ctxFn.flowDynamic([
-      { body: "Si tienes más dudas, hazme una pregunta", delay: 1000 },
-    ]);
+
     await ctxFn.flowDynamic(
-      "O también puedes escribir *menú* para volver a comenzar."
+      "Escribe  *menú* para regresar."
     );
     return ctxFn.gotoFlow(handlerMenu);
   } catch (error) {

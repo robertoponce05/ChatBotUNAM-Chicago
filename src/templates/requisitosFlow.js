@@ -12,11 +12,9 @@ const requisitosFlow = addKeyword(EVENTS.ACTION).addAction(
     try {
       console.log("Navega  requisitos");
       await ctxFn.flowDynamic([{ body: requisitos, delay: 500 }]);
-      await ctxFn.flowDynamic([
-        { body: "Si tienes más dudas, hazme una pregunta", delay: 800 },
-      ]);
+
       await ctxFn.flowDynamic(
-        "O también puedes escribir *menú* para volver a comenzar."
+        "Escribe  *menú* para regresar."
       );
       return ctxFn.gotoFlow(handlerMenu);
     } catch (error) {
