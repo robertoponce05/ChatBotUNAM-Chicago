@@ -3,13 +3,18 @@ import { EVENTS } from "@builderbot/bot";
 import { config } from "../config/index.js";
 import path from "path";
 import fs from "fs";
-
-import { gptFlow } from "./gptFlow.js";
+import { descuentosFlow } from "./descuentosFlow.js";
+import { requisitosFlow } from "./requisitosFlow.js";
+import { fechasFlow } from "./fechasFlow.js";
+import { registroFlow } from "./registroFlow.js";
+import { hotelFlow } from "./hotelFlow.js";
+import { flowInfo } from "./flowInfo.js";
 import { welcomeFlow } from "./welcomeFlow.js";
+import { visitasFlow } from "./visitasFlow.js";
 import { byeFlow } from "./byeFlow.js";
 import { mongoAdapter } from "../db/mongoAdapter.js";
 import { handlerMenu } from "./handlerMenu.js";
-
+import { clearSessionTimer } from "./mainFlow.js";
 const Prompt_DETECTED = path.join(
   process.cwd(),
   "assets/prompts",
@@ -20,7 +25,16 @@ const promptDetected = fs.readFileSync(Prompt_DETECTED, "utf8");
 export const DetectIntention = createFlowRouting
   .setKeyword(EVENTS.ACTION)
   .setIntentions({
-    intentions: ["SALUDO", "FAQ", "NO_DETECTED", "DESPEDIDA"],
+    intentions: [
+      "SALUDO",
+      "infoFlow",
+      "descuentosFlow",
+      "requisitosFlow",
+      "fechasFlow",
+      "registroFlow",
+      "hotelFlow",
+      "DESPEDIDA"
+    ],
     description: promptDetected,
   })
   .setAIModel({
@@ -64,16 +78,39 @@ export const DetectIntention = createFlowRouting
               ctx.body
             );
             await flowDynamic("No entendí tu pregunta 😅");
-            await flowDynamic("Escribe *menú* o dame más detalles.");
+            await flowDynamic("Para regresar escribe *menú* ");
             return gotoFlow(handlerMenu);
           }
           if (intention == "SALUDO") {
             return gotoFlow(welcomeFlow);
           }
-          if (intention == "FAQ") {
-            return gotoFlow(gptFlow);
+          if (intention == "infoFlow") {
+            return gotoFlow(flowInfo);
+          }
+          if (intention == "visitasFlow") {
+            return gotoFlow(visitasFlow);
+          }
+          if (intention == "descuentosFlow") {
+            return gotoFlow(descuentosFlow);
+          }
+          
+          if (intention == "requisitosFlow") {
+              return gotoFlow(requisitosFlow);
+          }
+          
+          if (intention == "fechasFlow") {
+              return gotoFlow(fechasFlow);
+          }
+          
+          if (intention == "registroFlow") {
+              return gotoFlow(registroFlow);
+          }
+          
+          if (intention == "hotelFlow") {
+            return gotoFlow(hotelFlow);
           }
           if (intention == "DESPEDIDA") {
+            clearSessionTimer(ctx);
             return gotoFlow(byeFlow);
           }
         } catch (error) {

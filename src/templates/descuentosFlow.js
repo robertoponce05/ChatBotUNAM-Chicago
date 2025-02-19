@@ -12,7 +12,7 @@ const descuentosFlow = addKeyword(EVENTS.ACTION).addAction(
     try {
       console.log("Navega a Descuentos");
 
-      await ctxFn.flowDynamic([{ body: descuentos, delay: 800 }]);
+      await ctxFn.flowDynamic([{ body: descuentos, delay: 200 }]);
 
       await ctxFn.flowDynamic(
         "Escribe  *menú* para regresar."

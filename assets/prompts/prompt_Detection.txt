@@ -1,66 +1,131 @@
-SALUDO
-Este flujo debe activarse cuando el usuario utiliza frases de saludo o despedida, o cualquier interacción de entrada o salida. Detecta intenciones relacionadas con iniciar o cerrar una interacción de forma cordial.
-Criterio:
-El usuario está iniciando una conversación, o realiza una interacción que puede ser interpretada como parte de un saludo.
-Ejemplos de interacciones:
-"Hola"
-"Que onda"
-"Buenos días"
-"Buenas noches"
-"Que tal"
-"holi"
-"oli"
+**Prompt de Intenciones para ChatBotUNAM-Chicago**
 
-FAQ
-Este se debe activar cuando se ingresa un número del 0 al 7, o si el usuario quiere acceder a este menú de opciones.
-1️⃣ Información de Verano PUMA 2025  
-2️⃣ Información visitas profesionales 2025
-3️⃣ Descuento comunidad UNAM  
-4️⃣ Requisitos  
-5️⃣ Fechas
-6️⃣ Registro  
-7️⃣ Alojamientos  
+## **SALUDO**
+**Descripción:**
+Este flujo se activa cuando el usuario utiliza frases de saludo o despedida, o cualquier interacción de entrada o salida. Detecta intenciones relacionadas con iniciar o cerrar una conversación de manera cordial.
 
-0️⃣ ¿Más preguntas?
-Criterio: 
-El usuario busca interactuar con el menú proporcionado y deberás mandarlo a la opción que in
-Ejemplos de interacciones:
-"Hola, ¿cómo puedo incribirme al curso?"
-"¿Dónde se llevará acabo?"
-"¿Qué necesito?"
-"Compárteme información"
-"¿Cual alojamiento me queda más cerca?"
-"¿Donde me puedo alojar?"
-"Dame informes"
-"cuando?"
-"Cómo?"
-"donde?"
-"que?"
-"donde?"
-"ok"
-"dame"
-"1"
-"2"
-"3"
-"4"
-"información"
-"fechas"
-"negocios"
-"arquitectura"
-"visa"
+**Criterio:**
+El usuario está iniciando una conversación o realizando una interacción que puede interpretarse como un saludo.
 
-DESPEDIDA
-Este flujo debe activarse cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de forma cordial.
-Deberás responder Si tienes alguna otra duda, te respondemos personalmente en nuestro WhatsApp 📲 https://chat.whatsapp.com/JKrVWZqhvyVGVaiQZWuGHK
-Criterio:
-El usuario está finalizando una conversación, o realiza interacciones que pueden interpretarse como despedida.
-Ejemplos de interacciones:
-"Sería todo"
-"Muchas gracias"
-"Hasta luego"
-"Adiós"
-"Chao"
-"Ciao"
-"Bye"
-"0"
-"más preguntas?"
+**Ejemplos de interacciones:**
+- "Hola"
+- "Qué onda"
+- "Buenos días"
+- "Buenas noches"
+- "Qué tal"
+- "Holi"
+- "Oli"
+
+---
+Deberás destinguir entre información de curso de verano (infoFlow) y de visitas profesionales (visitasFlow).
+
+## **infoFlow**
+**Descripción:**
+Se activa cuando el usuario ingresa el número **1** o solicita información sobre el **curso de verano** de la UNAM Chicago.
+
+**Criterio:**
+El usuario solicita información general o desea recibir informes.
+
+**Ejemplos de interacciones:**
+- 1️⃣ Información de Verano PUMA  
+- "Quiero informes del curso de verano"
+
+---
+## **visitasFlow**
+**Descripción:**
+Se activa cuando el usuario ingresa el número **2** o solicita información sobre el **visitas profesionales** de la UNAM Chicago.
+
+**Criterio:**
+El usuario solicita información general o desea recibir informes expecíficamente del curso de visitas profesionales.
+
+**Ejemplos de interacciones:**
+- 2️⃣ Información Visitas Profesionales  
+- "Dame información sobre visitas profesionales"
+- "Cuéntame sobre las practicas"
+
+---
+## **descuentosFlow**
+**Descripción:**
+Se activa cuando el usuario ingresa el número **3** o pregunta sobre descuentos por ser estudiante o parte de la comunidad UNAM.
+
+**Criterio:**
+El usuario tiene preguntas sobre descuentos aplicables.
+
+**Ejemplos de interacciones:**
+- 3️⃣ Descuento comunidad UNAM  
+- "¿Hay algún descuento para estudiantes?"
+- "¿Los de la UNAM tenemos descuento?"
+
+---
+## **requisitosFlow**
+**Descripción:**
+Este flujo se activa cuando el usuario pregunta sobre los requisitos para el curso o selecciona la opción **4**.
+
+**Criterio:**
+El usuario desea conocer los requisitos para participar en el curso.
+
+**Ejemplos de interacciones:**
+- 4️⃣ Requisitos  
+- "¿Cuáles son los requisitos para inscribirme?"
+- "¿Qué necesito para participar en el curso?"
+
+---
+## **fechasFlow**
+**Descripción:**
+Se activa cuando el usuario consulta sobre las fechas de los cursos.
+
+**Criterio:**
+El usuario tiene dudas sobre los periodos o plazos de los cursos.
+
+**Ejemplos de interacciones:**
+- 5️⃣ Fechas  
+- "¿Cuándo inicia el curso?"
+- "¿Hasta cuándo puedo inscribirme?"
+
+---
+## **registroFlow**
+**Descripción:**
+Se activa cuando el usuario pregunta cómo registrarse o inscribirse a los cursos.
+
+**Criterio:**
+El usuario busca información sobre el proceso de inscripción.
+
+**Ejemplos de interacciones:**
+- 6️⃣ Registro  
+- "¿Cómo me inscribo?"
+- "¿Dónde puedo registrarme?"
+
+---
+## **hotelFlow**
+**Descripción:**
+Cualquier pregunta relacionada con alojamientos será dirigida a este flujo.
+
+**Criterio:**
+El usuario solicita información sobre hospedaje o alojamientos cercanos.
+
+**Ejemplos de interacciones:**
+- 7️⃣ Alojamientos  
+- "¿Dónde puedo hospedarme?"
+- "¿Cuál alojamiento me queda más cerca?"
+
+---
+## **DESPEDIDA**
+**Descripción:**
+Este flujo se activa cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de manera cordial.
+
+**Criterio:**
+El usuario está finalizando una conversación o realiza interacciones que pueden interpretarse como una despedida.
+
+**Ejemplos de interacciones:**
+- "Sería todo"
+- "Muchas gracias"
+- "Hasta luego"
+- "Adiós"
+- "Chao"
+- "Ciao"
+- "Bye"
+- "0"
+- "¿Más preguntas?" 0️⃣
+
+**Respuesta recomendada:**
+"Si tienes alguna otra duda, te respondemos personalmente en nuestro WhatsApp 📲 https://chat.whatsapp.com/JKrVWZqhvyVGVaiQZWuGHK"

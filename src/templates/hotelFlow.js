@@ -14,8 +14,8 @@ const hoteles = fs.readFileSync(
 const hotelFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   try {
     console.log("Navega  hotel");
-    await ctxFn.flowDynamic([{ body: hotel, delay: 800 }]);
-    await ctxFn.flowDynamic([{ body: hoteles, delay: 1000 }]);
+    await ctxFn.flowDynamic([{ body: hotel, delay: 200 }]);
+    await ctxFn.flowDynamic([{ body: hoteles, delay: 200 }]);
 
     await ctxFn.flowDynamic(
       "Escribe  *menú* para regresar."

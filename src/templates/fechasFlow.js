@@ -14,8 +14,8 @@ const fechasPP = fs.readFileSync(
 const fechasFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   try {
     console.log("Navega  fechas");
-    await ctxFn.flowDynamic([{ body: fechas, delay: 800 }]);
-    await ctxFn.flowDynamic([{ body: fechasPP, delay: 800 }]);
+    await ctxFn.flowDynamic([{ body: fechas, delay: 200 }]);
+    await ctxFn.flowDynamic([{ body: fechasPP, delay: 300 }]);
     await ctxFn.flowDynamic(
       "Escribe  *menú* para regresar."
     );

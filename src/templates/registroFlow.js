@@ -11,8 +11,8 @@ const imgPath = path.join(process.cwd(), "assets/media", "curso.jpeg");
 const registroFlow = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   try {
     console.log("Navega  registro");
-    await ctxFn.flowDynamic([{ media: imgPath, delay: 800 }]);
-    await ctxFn.flowDynamic([{ body: registro, delay: 1000 }]);
+    await ctxFn.flowDynamic([{ media: imgPath, delay: 200 }]);
+    await ctxFn.flowDynamic([{ body: registro, delay: 200 }]);
 
     await ctxFn.flowDynamic(
       "Escribe  *menú* para regresar."

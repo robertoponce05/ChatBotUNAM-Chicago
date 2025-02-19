@@ -11,7 +11,7 @@ const requisitosFlow = addKeyword(EVENTS.ACTION).addAction(
   async (ctx, ctxFn) => {
     try {
       console.log("Navega  requisitos");
-      await ctxFn.flowDynamic([{ body: requisitos, delay: 500 }]);
+      await ctxFn.flowDynamic([{ body: requisitos, delay: 200 }]);
 
       await ctxFn.flowDynamic(
         "Escribe  *menú* para regresar."
