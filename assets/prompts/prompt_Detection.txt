@@ -62,3 +62,5 @@ Ejemplos de interacciones:
 "Chao"
 "Ciao"
 "Bye"
+"0"
+"más preguntas?"

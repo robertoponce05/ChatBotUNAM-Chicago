@@ -1,6 +1,7 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
 import { DetectIntention } from "./intentionsFlow.js";
 import { mongoAdapter } from "../db/mongoAdapter.js";
+import { byeFlow } from "./byeFlow.js";
 
 const mainFlow = addKeyword(EVENTS.WELCOME).addAction(async (ctx, ctxFn) => {
   try {
@@ -20,6 +21,10 @@ const mainFlow = addKeyword(EVENTS.WELCOME).addAction(async (ctx, ctxFn) => {
       });
     }
     console.log("Comienza flujo de ", ctx.from);
+    setTimeout(async () => {
+      console.log("Sesión expirada para ", ctx.from);
+      await ctxFn.gotoFlow(byeFlow);
+    }, 300000);
     return ctxFn.gotoFlow(DetectIntention);
   } catch (error) {
     console.log("Error en mainflow", error);

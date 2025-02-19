@@ -13,9 +13,9 @@ const costos = fs.readFileSync(
 const flowInfo = addKeyword(EVENTS.ACTION).addAction(async (ctx, ctxFn) => {
   try {
     console.log("Navega a Información");
-    await ctxFn.flowDynamic([{ media: imgPath, delay: 800 }]);
-    await ctxFn.flowDynamic([{ body: infoText, delay: 1000 }]);
-    await ctxFn.flowDynamic([{ body: costos, delay: 1000 }]);
+    await ctxFn.flowDynamic([{ media: imgPath, delay: 2000 }]);
+    await ctxFn.flowDynamic([{ body: infoText, delay: 2000 }]);
+    await ctxFn.flowDynamic([{ body: costos, delay: 2000 }]);
     await ctxFn.flowDynamic(
       "Escribe  *menú* para regresar."
     );
