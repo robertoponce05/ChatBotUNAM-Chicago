@@ -13,7 +13,7 @@ const resetSessionTimer = async (ctx, ctxFn) => {
   sessionTimers[ctx.from] = setTimeout(async () => {
     console.log("Sesión expirada para ", ctx.from);
     await ctxFn.gotoFlow(byeFlow);
-  }, 20000);
+  }, 300000);
 };
 
 const clearSessionTimer = (ctx) => {
