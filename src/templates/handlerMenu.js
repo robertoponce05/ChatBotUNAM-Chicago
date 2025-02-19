@@ -10,11 +10,13 @@ import { DetectIntention } from "./intentionsFlow.js";
 import { EVENTS } from "@builderbot/bot";
 import { menuFlow } from "./menuFlow.js";
 import { byeFlow } from "./byeFlow.js";
+import { resetSessionTimer, clearSessionTimer } from "./mainFlow.js";
 
 const handlerMenu = addKeyword(EVENTS.ACTION)
   .addAction({ capture: true })
   .addAction(async (ctx, { gotoFlow, fallBack }) => {
     try {
+      await resetSessionTimer(ctx, { gotoFlow, fallBack });
       console.error("entra HandlerMenu con captura: ", ctx.body);
       const userInput = ctx.body.toLowerCase();
       if (
@@ -41,6 +43,7 @@ const handlerMenu = addKeyword(EVENTS.ACTION)
           return gotoFlow(hotelFlow);
         case "0":
         case "salir":
+          clearSessionTimer(ctx);
           return gotoFlow(byeFlow);
         case "menu":
         case "menú":
