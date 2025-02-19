@@ -1,11 +1,11 @@
 Elige una opción: 
 
-1️⃣ Información de Verano PUMA 2025  
-2️⃣ Información visitas profesionales  
-3️⃣ Descuento comunidad UNAM  
-4️⃣ Requisitos  
-5️⃣ Fechas del programa  
-6️⃣ Registro
-7️⃣ Alojamientos  
+1️⃣ Información de Verano PUMA 2025
+2️⃣ Información Visitas Profesionales 2025
+3️⃣ Descuento comunidad UNAM
+4️⃣ Requisitos
+5️⃣ Fechas
+6️⃣ Registro sesión informativa
+7️⃣ Alojamientos
 
-0️⃣ Salir.
+0️⃣ ¿Más preguntas?

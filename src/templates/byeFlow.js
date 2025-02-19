@@ -6,7 +6,7 @@ const byeFlow = addKeyword(["salir", "Salir", EVENTS.ACTION]).addAction(
       console.log("Cliente finaliza Chat");
       ctxFn.flowDynamic("Gracias por usar nuestro ChatBot 🤖");
       return ctxFn.endFlow(
-        "No dudes en regresar en caso de tener más preguntas."
+        "Si tienes alguna otra duda, te respondemos personalmente en nuestro WhatsApp 📲 https://chat.whatsapp.com/JKrVWZqhvyVGVaiQZWuGHK"
       );
     } catch (error) {
       console.log("Error en byeFlow: ", error);

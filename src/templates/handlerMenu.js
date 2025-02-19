@@ -9,10 +9,11 @@ import { visitasFlow } from "./visitasFlow.js";
 import { DetectIntention } from "./intentionsFlow.js";
 import { EVENTS } from "@builderbot/bot";
 import { menuFlow } from "./menuFlow.js";
+import { byeFlow } from "./byeFlow.js";
 
 const handlerMenu = addKeyword(EVENTS.ACTION)
   .addAction({ capture: true })
-  .addAction(async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
+  .addAction(async (ctx, { gotoFlow, fallBack }) => {
     try {
       console.error("entra HandlerMenu con captura: ", ctx.body);
       const userInput = ctx.body.toLowerCase();
@@ -38,17 +39,13 @@ const handlerMenu = addKeyword(EVENTS.ACTION)
           return gotoFlow(registroFlow);
         case "7":
           return gotoFlow(hotelFlow);
-
         case "0":
         case "salir":
-          return await flowDynamic(
-            "Saliendo... Puedes volver a ingresar diciéndome '*Hola*'"
-          );
+          return gotoFlow(byeFlow);
         case "menu":
         case "menú":
           return gotoFlow(menuFlow);
         default:
-          // Este caso no debería ser necesario debido a la validación anterior
           return;
       }
     } catch (error) {

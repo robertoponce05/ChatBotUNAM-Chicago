@@ -14,16 +14,16 @@ Ejemplos de interacciones:
 FAQ
 Este se debe activar cuando se ingresa un número del 0 al 7, o si el usuario quiere acceder a este menú de opciones.
 1️⃣ Información de Verano PUMA 2025  
-2️⃣ Información visitas profesionales  
+2️⃣ Información visitas profesionales 2025
 3️⃣ Descuento comunidad UNAM  
 4️⃣ Requisitos  
-5️⃣ Fechas del programa  
+5️⃣ Fechas
 6️⃣ Registro  
 7️⃣ Alojamientos  
 
-0️⃣ Salir.
+0️⃣ ¿Más preguntas?
 Criterio: 
-El usuario busca interactuar con el menú proporcionado y deberás guiarlo.
+El usuario busca interactuar con el menú proporcionado y deberás mandarlo a la opción que in
 Ejemplos de interacciones:
 "Hola, ¿cómo puedo incribirme al curso?"
 "¿Dónde se llevará acabo?"
@@ -51,6 +51,7 @@ Ejemplos de interacciones:
 
 DESPEDIDA
 Este flujo debe activarse cuando el usuario utiliza frases de despedida. Detecta intenciones relacionadas con cerrar una interacción de forma cordial.
+Deberás responder Si tienes alguna otra duda, te respondemos personalmente en nuestro WhatsApp 📲 https://chat.whatsapp.com/JKrVWZqhvyVGVaiQZWuGHK
 Criterio:
 El usuario está finalizando una conversación, o realiza interacciones que pueden interpretarse como despedida.
 Ejemplos de interacciones:
